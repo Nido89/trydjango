@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
 
     #myownapps
+    'pages',
     'listings',
 ]
 
