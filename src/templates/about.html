@@ -2,11 +2,14 @@
 
 {% block content %}
 <h1> About Page </h1>
+
+
+<h3>{{ title }}</h3>
 <p>This is a Template</p>
 
-
+{{ my_html|safe }}
 <p>
-{{ my_text }}, {{ my_number }}
+, {{ my_number }}
 {{ my_list }}
 </p>
 
@@ -18,10 +21,14 @@
 	</ul>
 <ul>
 {% for abc in my_list %}
-{% if abc == 1232 %}
+	{% if abc == 1232 %}
 		<li>{{ forloop.counter }} - {{ abc|add:100 }}</li>
+	{% elif abc == "abc" %}
+		<li>THIS IS NOT THE NETWORK</li>
+	{% else %}
+		<li>{{ forloop.counter }} - {{ abc }}</li>
 	{% endif %}
-	<li>{{ forloop.counter }} - {{ abc }}</li>
+	
 
 {% endfor %}
 </ul>
