@@ -6,7 +6,7 @@ class Listings(models.Model):
 	description = models.TextField(blank=True, null=True)
 	price       = models.DecimalField(decimal_places=2, max_digits=1000000)
 	summary     = models.TextField(blank=False, null=False)
-	featured    = models.BooleanField() #nulle = True, Default = True
+	featured    = models.BooleanField(default=False) #nulle = True, Default = True
 
 
 	
